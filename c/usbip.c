@@ -67,9 +67,9 @@ void handle_device_list(const USB_DEVICE_DESCRIPTOR *dev_dsc, OP_REP_DEVLIST *li
   list->header.status=0;
   list->header.nExportedDevice=htonl(1);
   memset(list->device.usbPath,0,256);
-  strcpy(list->device.usbPath,"/sys/devices/pci0000:00/0000:00:01.2/usb1/1-1");
+  strcpy(list->device.usbPath,"/sys/devices/pci0000:00/0000:00:01.2/usb1/1-1.5");
   memset(list->device.busID,0,32);
-  strcpy(list->device.busID,"1-1");
+  strcpy(list->device.busID,"1-1.5");
   list->device.busnum=htonl(1);
   list->device.devnum=htonl(2);
   list->device.speed=htonl(2);
@@ -100,9 +100,9 @@ void handle_attach(const USB_DEVICE_DESCRIPTOR *dev_dsc, OP_REP_IMPORT *rep)
   rep->command=htons(3);
   rep->status=0;
   memset(rep->usbPath,0,256);
-  strcpy(rep->usbPath,"/sys/devices/pci0000:00/0000:00:01.2/usb1/1-1");
+  strcpy(rep->usbPath,"/sys/devices/pci0000:00/0000:00:01.2/usb1/1-1.5");
   memset(rep->busID,0,32);
-  strcpy(rep->busID,"1-1");
+  strcpy(rep->busID,"1-1.5");
   rep->busnum=htonl(1);
   rep->devnum=htonl(2);
   rep->speed=htonl(2);
